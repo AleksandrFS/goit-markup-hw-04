@@ -13,10 +13,12 @@
     --text-color-hero: #fff;
     --primary-bgd-color: #fff;
     --customers-logo-color:#8E8F99;
-    --customers-border-color:#8E8F99;
+    --customers-border-hover-color:#4D5AE5;
+    --customers-logo-hover-color:#4D5AE5;
+    --customers-border-color: #8E8F99;
     --hover-link-bgnc:#31D0AA;
-    --bgnc-links-footer:#8E8F99;
-    --bgnc-links-footer-hover: #31D0AA;
+    --bgnc-links-footer:rgba(255, 255, 255, 0.1);
+    --bgnc-links-hover: #31D0AA;
 }
 
 body {
@@ -325,15 +327,14 @@ box-shadow: 0px 1px 0px rgba(46, 47, 66, 0.08);
     align-items: center;
     width: 264px;
     height: 112px;
-    padding: 24px 100px;
     margin-bottom: 8px;
     background-color: var(--secondary-color);
     border-radius: 4px;
 }
-
+/* 
 .features-icon {
     display: block;
-}
+} */
 
 /* What we are doing */
 
@@ -401,11 +402,11 @@ margin-top: 8px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--acent-color)
+    background-color: var(--acent-color);
 }
 
 .social-list-link:hover, .social-list-link:focus {
-    background-color: var(--btn-order-hover-color);
+    background-color: var(--bgnc-links-hover);
 }
 .social-list-icon {
     fill: var(--primary-bgd-color);
@@ -419,20 +420,40 @@ margin-top: 8px;
     gap: 24px;
 }
 
-.customers-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 168px;
+.customers-link-list {
+    width: calc((100% - 5 * 24px) / 6);
     height: 88px;
-    border: 1px solid var(--customers-border-color);
-    border-radius: 4px;
-    padding: 16px 32px;
 }
 
-.customers-icon .logo {
+.customers-link {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-basis: auto;
+    height: 100%;
+    border: 1px solid var(--customers-border-color);
+    border-radius: 4px;
+}
+
+.customers-link:hover,
+.customers-link:focus {
+    border: 1px solid var(--customers-border-hover-color);
+}
+
+.customers-link:hover .customers-link-logo,
+.customers-link:focus .customers-link-logo {
+    fill: var(--customers-logo-hover-color);
+}
+.logo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.customers-link-logo {
     fill: var(--customers-logo-color);
 }
+
 
 /* PORTFOLIO */
 
@@ -564,7 +585,8 @@ margin-top: 8px;
     background-color: var(--bgnc-links-footer);
 }
 
-.social-media-link:hover, .social-media-link:focus {
+.social-media-link:hover, 
+.social-media-link:focus {
     background-color: var(--hover-link-bgnc);
 }
 
